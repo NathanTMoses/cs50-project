@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+   {% if own %}
+        <form action="/edit" method="post">
+            <fieldset>
+                <div>
+                    <b>{{ title }}</b>
+                </div>
+                <div class="form-group">
+                    <textarea name="mail" rows="10" cols="50">{{ mail }}</textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default" type="submit">Save</button>
+                </div>
+            </fieldset>
+        </form>
+    {% else %}
+    <b>{{ title }}
+    <br><br><br>
+    <textarea name="mail" rows="10" cols="50" disabled >{{ mail }}</textarea>
+    {% endif %}
+{% endblock %}
